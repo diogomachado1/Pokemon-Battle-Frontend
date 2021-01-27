@@ -80,6 +80,7 @@ function App() {
           </Heading>
         </Center>
         <IconButton
+          zIndex="999"
           position="fixed"
           right="0"
           bottom="20px"
