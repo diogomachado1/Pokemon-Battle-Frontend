@@ -1,6 +1,6 @@
 import { Button, Center, Heading, Text } from '@chakra-ui/react';
 import axios from 'axios';
-import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import React, { Dispatch, SetStateAction, useState } from 'react';
 import { IPokemon } from '../Interface/IPokemon';
 
 function BattleField({
@@ -23,12 +23,6 @@ function BattleField({
       }
     | undefined
   >(undefined);
-
-  useEffect(() => {
-    console.log(isLastPokemonDead, pokemonA);
-    console.log(isLastPokemonDead, pokemonB);
-    console.log(battleResult || (isLastPokemonDead && !pokemonB));
-  }, [isLastPokemonDead, pokemonA, pokemonB]);
 
   async function handleBattle(idA: number, idB: number) {
     setIsLoading(true);

@@ -37,15 +37,13 @@ function PokemonFormModal({
   isOpen: boolean;
   handleClose: (needReload?: boolean) => void;
 }) {
-  const { register, handleSubmit, reset, errors } = useForm({
+  const { register, handleSubmit, reset } = useForm({
     resolver: yupResolver(schema),
   });
   useEffect(() => {
     reset(initialValue);
   }, [initialValue, reset]);
-  useEffect(() => {
-    console.log(errors);
-  }, [errors]);
+
   const onSubmit = async ({ id, treinador, tipo }: IPokemon) => {
     setIsLoading(true);
     try {
