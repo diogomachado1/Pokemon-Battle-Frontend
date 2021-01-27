@@ -56,8 +56,13 @@ function BattleField({
   }
 
   return (
-    <Center flexDir="column" minH="250px" h="250px" maxH="250px">
-      <Center>
+    <Center
+      flexDir="column"
+      minH={{ md: '250px', sm: '500px' }}
+      h={{ md: '250px', sm: '500px' }}
+      maxH={{ md: '250px', sm: '500px' }}
+    >
+      <Center flexDir={['column', 'column', 'row']}>
         {pokemonA ? (
           <Center flexDir="column">
             <Center
